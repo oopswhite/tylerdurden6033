@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>請輸入密碼</title>
+    <style>
+        /* 這裡的 CSS 樣式跟你的首頁差不多，保持風格一致 */
+        body { background-color: #1a1a2e; color: #e0e0e0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; display: flex; justify-content: center; align-items: center; min-height: 100vh; text-align: center; }
+        .container { background-color: #2a2a3e; border-radius: 12px; box-shadow: 0 0 25px rgba(255, 0, 255, 0.3); border: 1px solid #ff00ff; max-width: 400px; width: 100%; padding: 40px; }
+        h1 { color: #ff00ff; }
+        input[type="password"] { width: 80%; padding: 12px; margin-top: 20px; border: 1px solid #00ffff; background-color: #1a1a2e; color: #e0e0e0; border-radius: 5px; font-size: 1.1em; }
+        button { margin-top: 25px; background-color: transparent; border: 2px solid #00ffff; color: #00ffff; padding: 12px 25px; border-radius: 5px; font-weight: bold; cursor: pointer; transition: all 0.3s ease; }
+        button:hover { background-color: #00ffff; color: #1a1a2e; }
+        .error-message { color: #ff4d4d; margin-top: 15px; display: none; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>請輸入密碼</h1>
+        <form onsubmit="checkPassword(event)">
+            <input type="password" id="password" placeholder="Password">
+            <br>
+            <button type="submit">進入</button>
+        </form>
+        <p id="error-message" class="error-message">密碼錯誤，請重試。</p>
+    </div>
+
+    <script>
+        function checkPassword(event) {
+            // 防止表單真的送出
+            event.preventDefault(); 
+
+            // 在這裡設定你的密碼
+            const correctPassword = "YOUR_SECRET_PASSWORD"; 
+
+            const enteredPassword = document.getElementById('password').value;
+            const errorMessage = document.getElementById('error-message');
+
+            if (enteredPassword === correctPassword) {
+                // 密碼正確，在 session 中做個標記
+                sessionStorage.setItem('isAuthenticated', 'true');
+                // 跳轉到私密頁
+                window.location.href = 'content.html';
+            } else {
+                // 密碼錯誤，顯示錯誤訊息
+                errorMessage.style.display = 'block';
+            }
+        }
+    </script>
+
+</body>
+</html>
