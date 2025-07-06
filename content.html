@@ -5,12 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Selected Content | Tyler's Taipei Diary</title>
     <style>
+        /* 保持與 index.html 一致的置中排版 */
         body {
             background-color: #1a1a2e;
             color: #e0e0e0;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
         }
         .container {
             background-color: #2a2a3e;
@@ -29,6 +34,13 @@
             text-align: center;
             border-bottom: 1px solid rgba(255, 0, 255, 0.3);
             padding-bottom: 10px;
+        }
+        /* Dcard 區塊的 h3 樣式 */
+        h3 {
+            color: #e0e0e0;
+            text-align: left;
+            padding-bottom: 5px;
+            border-bottom: 1px solid rgba(0, 255, 255, 0.2);
         }
         p, li {
             font-size: 1.1em;
@@ -59,7 +71,6 @@
             border-radius: 5px;
             border-left: 3px solid #00ffff;
         }
-        /* (新增) 媒體網格樣式，用於顯示照片和影片 */
         .media-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -95,6 +106,16 @@
 </head>
 <body>
 
+    <script>
+        // **密碼登入保護**
+        // 檢查 sessionStorage 中是否有 'isAuthenticated' 這個標記
+        if (sessionStorage.getItem('isAuthenticated') !== 'true') {
+            // 如果沒有，代表未登入，顯示警告並跳轉回首頁
+            alert('請先登入以存取此頁面。');
+            window.location.href = 'index.html';
+        }
+    </script>
+
     <div class="container">
         <h1>私密頁</h1>
 
@@ -114,10 +135,10 @@
         <div class="content-section">
             <h2>生活片段</h2>
             <div class="media-grid">
-                <img src="../assets/images/海灘-1.jpg" alt="海灘照片">
-                <img src="../assets/images/黑人-1.jpg" alt="黑人照片">
-                <video src="../assets/videos/溫泉.MP4" controls></video>
-                <video src="../assets/videos/夏威夷.MOV" controls></video>
+                <img src="assets/images/海灘-1.jpg" alt="海灘照片">
+                <img src="assets/images/黑人-1.jpg" alt="黑人照片">
+                <video src="assets/videos/溫泉.MP4" controls></video>
+                <video src="assets/videos/夏威夷.MOV" controls></video>
             </div>
         </div>
 
