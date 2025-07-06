@@ -187,7 +187,13 @@
 </head>
 
 <body>
-
+<script>
+    // 檢查使用者是否有通過密碼驗證的標記
+    if (sessionStorage.getItem('isAuthenticated') !== 'true') {
+        // 如果沒有，就強制跳轉回密碼頁
+        window.location.href = 'gate.html';
+    }
+</script>
 
 
     <div class="container">
