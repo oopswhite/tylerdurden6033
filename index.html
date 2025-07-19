@@ -88,11 +88,12 @@
             margin-top: 20px;
         }
         .media-grid img, .media-grid video {
-            width: 100%;
-            height: auto;
-            border-radius: 8px;
-            border: 2px solid #00ffff;
-        }
+    width: 100%;
+    height: 250px; /* <- 新增固定的高度 */
+    object-fit: cover; /* <- 新增讓圖片填滿容器 */
+    border-radius: 8px;
+    border: 2px solid #00ffff;
+}
         /* 年齡警語頁面樣式 */
         .age-gate {
             position: fixed;
