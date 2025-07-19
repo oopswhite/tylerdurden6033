@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Selected Content | Tyler's Taipei Diary</title>
     <style>
-        /* 保持與 index.html 一致的置中排版 */
         body {
             background-color: #1a1a2e;
             color: #e0e0e0;
@@ -22,7 +21,7 @@
             border-radius: 12px;
             box-shadow: 0 0 25px rgba(0, 255, 255, 0.3);
             border: 1px solid #00ffff;
-            max-width: 800px; /* 稍微加寬以容納更多內容 */
+            max-width: 800px;
             width: 100%;
             margin: 20px auto;
             padding: 30px;
@@ -35,7 +34,6 @@
             border-bottom: 1px solid rgba(255, 0, 255, 0.3);
             padding-bottom: 10px;
         }
-        /* Dcard 區塊的 h3 樣式 */
         h3 {
             color: #e0e0e0;
             text-align: left;
@@ -44,7 +42,7 @@
         }
         p, li {
             font-size: 1.1em;
-            line-height: 1.7; /* 增加行高讓長文案易讀 */
+            line-height: 1.7;
             color: #c0c0e0;
         }
         a {
@@ -71,18 +69,6 @@
             border-radius: 5px;
             border-left: 3px solid #00ffff;
         }
-        .media-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-            margin-top: 20px;
-        }
-        .media-grid img, .media-grid video {
-            width: 100%;
-            height: auto;
-            border-radius: 8px;
-            border: 2px solid #00ffff;
-        }
         .nav-button {
             display: block;
             width: 80%;
@@ -102,15 +88,29 @@
             background-color: #ff00ff;
             color: #1a1a2e;
         }
+        /* 從 index.html 移來的樣式 */
+        .welcome-title {
+            font-size: 2em;
+            font-weight: bold;
+            color: #e0e0e0;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+            margin-bottom: 25px;
+            text-align: center;
+            border-bottom: none; /* 移除繼承的底線 */
+        }
+        .intro-text {
+            color: #c0c0e0;
+            font-style: normal;
+            font-size: 1.2em;
+            text-align: center;
+        }
     </style>
 </head>
 <body>
 
     <script>
         // **密碼登入保護**
-        // 檢查 sessionStorage 中是否有 'isAuthenticated' 這個標記
         if (sessionStorage.getItem('isAuthenticated') !== 'true') {
-            // 如果沒有，代表未登入，顯示警告並跳轉回首頁
             alert('請先登入以存取此頁面。');
             window.location.href = 'index.html';
         }
@@ -119,26 +119,12 @@
     <div class="container">
         <h1>私密頁</h1>
 
-        <div class="content-section">
-            <h2>關於我</h2>
-            <p>
-                台北人，181。<br>
-                白天在數位世界裡，假日則解鎖海岸線。<br>
-                熱衷於探索各種可能:<br>
-                新的潛點、一部電影，或是一間新開的 Whisky Bar。<br>
-                想認識有自己想法、享受生活的女生。<br>
-                妳的活力與自信會是吸引我的起點，<br>
-                迷人的身體線條則是令人驚喜的風景。<br>
-                一起來探險吧。<br>
-            </p>
-        </div>
-
-        <div class="content-section">
-            <h2>生活片段</h2>
-            <div class="media-grid">
-                <img src="assets/images/黑人-1.jpg" alt="黑人照片">
-                <img src="assets/images/newyork.jpg" alt="正裝照片">
-            </div>
+        <div style="text-align: center; padding: 20px 0;">
+            <h2 class="welcome-title">歡迎來到TD的樹洞</h2>
+            <h1 style="font-size: 1.5em; border-bottom: none; padding-bottom: 0;">恭喜你找到這裡，<br>
+                已經走了這麼遠，<br>
+                再多一步就可以進來</h1>
+            <p class="intro-text">一個喜歡玩水的台北人。<br>找雙北的女孩，<br>或是...你知道的。</p>
         </div>
 
         <div class="content-section">
