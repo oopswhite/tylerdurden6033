@@ -88,21 +88,24 @@
             background-color: #ff00ff;
             color: #1a1a2e;
         }
-        /* 從 index.html 移來的樣式 */
+        /* 新增的圖片樣式 */
+        .header-image {
+            display: block;
+            margin: 0 auto 25px auto; /* 置中並與下方文字產生間距 */
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            border: 2px solid #00ffff;
+        }
         .welcome-title {
-            font-size: 2em;
+            font-size: 1.5em; /* 調整字體大小以適應多行文字 */
             font-weight: bold;
             color: #e0e0e0;
             text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
             margin-bottom: 25px;
             text-align: center;
-            border-bottom: none; /* 移除繼承的底線 */
-        }
-        .intro-text {
-            color: #c0c0e0;
-            font-style: normal;
-            font-size: 1.2em;
-            text-align: center;
+            border-bottom: none;
+            line-height: 1.6; /* 增加行高 */
         }
     </style>
 </head>
@@ -120,11 +123,14 @@
         <h1>私密頁</h1>
 
         <div style="text-align: center; padding: 20px 0;">
-            <h2 class="welcome-title">歡迎來到TD的樹洞</h2>
-            <h1 style="font-size: 1.5em; border-bottom: none; padding-bottom: 0;">恭喜你找到這裡，<br>
-                已經走了這麼遠，<br>
-                再多一步就可以進來</h1>
-            <p class="intro-text">一個喜歡玩水的台北人。<br>找雙北的女孩，<br>或是...你知道的。</p>
+            <img src="assets/images/treehole.jpeg" alt="Tree Hole Scene" class="header-image">
+            
+            <h2 class="welcome-title">
+                歡迎來到TD的樹洞<br>
+                樹洞就是儲存秘密的地方<br>
+                你看到我的秘密<br>
+                也要留下你的秘密
+            </h2>
         </div>
 
         <div class="content-section">
