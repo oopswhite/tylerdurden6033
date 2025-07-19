@@ -102,6 +102,7 @@
             padding: 40px;
             border-radius: 10px;
             border: 1px solid #ff00ff;
+            max-width: 90%; /* 限制寬度避免在大螢幕上過大 */
         }
         .age-gate-button {
             display: inline-block;
@@ -129,6 +130,7 @@
 
     <div id="age-gate" class="age-gate">
         <div class="age-gate-box">
+            <img src="assets/images/cyberpunk.jpg" alt="Profile Photo" class="profile-photo">
             <h1>內容警語</h1>
             <p>本網站內容可能包含成人議題，請確認您已年滿18歲再進入。</p>
             <button class="age-gate-button yes" onclick="enterSite()">是，我已滿18歲</button>
@@ -139,8 +141,6 @@
     <div id="main-content" class="main-content">
         <div class="container">
             <h2 class="welcome-title">歡迎來到TD的樹洞</h2>
-            <img src="assets/images/cyberpunk.jpg" alt="Profile Photo" class="profile-photo">
-            
             <h1>恭喜你找到這裡，<br>
                 已經走了這麼遠，<br>
                 再多一步就可以進來</h1>
